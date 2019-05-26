@@ -64,7 +64,7 @@ def newpost():
             # blog = Blog.query.get(new_blog_id)
             return render_template('/blog.html', blog=new_blog)
 
-    # return render_template('newpost.html', title="Add New Blog Post")
+    return render_template('newpost.html', title="Add New Blog Post")
 
 @app.route('/blog', methods=['GET'])
 def blog():
