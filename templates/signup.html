@@ -5,21 +5,33 @@
 <form action="/signup" method="post">
     <table>
         <tr>
-            <td><label for="email">Email</label></td>
-            <td>
-                <input name="email" type="email" value="{{ email }}">
+            <td><label for="username">Username</label></td>
+            <td><input id ="username" name="username" type="text" value="{{ username }}"></td>
+        </tr>    
+        <tr>    
+            <td> 
+                {% if exist_error  %}
+                    <span style="color:red">{{exist_error}} </span> 
+                {%endif%}
+                
+                {% if name_error  %}
+                    <span style="color:red">{{name_error}} </span> 
+                {%endif%}
             </td>
         </tr>
         <tr>
             <td><label for="password">Password</label></td>
-            <td>
-                <input name="password" type="password">
-            </td>
+            <td><input id="password" name="password" type="password"></td>
+        </tr> 
+        <tr>   
+            <td><label for="verify">Verify Password</label></td>
+            <td><input id="verify" name="verify" type="password"></td>
         </tr>
         <tr>
-            <td><label for="verify">Verify Password</label></td>
-            <td>
-                <input id = "verify" name="verify" type="password">
+            <td> 
+                {% if pass_error  %}
+                    <span style="color:red">{{pass_error}}</span>
+                {%endif%}
             </td>
         </tr>
     </table>

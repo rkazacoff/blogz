@@ -1,9 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Ryan's Blog spot</h1>
+
 <!--Render Individual Blog from Index List-->
-<h2>{{ blog.title }}</h2>
-    <p>{{blog.body}}</p></li>
+
+    {% for b in blogs %}  
+        
+        <h1>{{ b.title }}</h1>
+        <p>{{ b.body }}</p>
+
+    {% endfor %}
 
 {% endblock %}
+
+
+
+<!-- <a href="/blog?id={{ user.user_id }}">{{ user.username }}</a> -->
+
+<!-- <p style='font-style: italic;'>written by <a href='./index?user={{ owner_id }}'>{{ user.username }}</a></p> -->

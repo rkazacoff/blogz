@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if blog %}
+    <h3>{{blog.title}}</h3>
+    <p>{{blog.body}}</p>
+    <br>
+    written by <a href="/details/{{blog.owner.username}}">{{blog.owner.username}}</a>
+{% else  %}
+    {% for b in blogs %}
+    <a href="/details/{{b.id}}">{{b.title}}</a>
+    <br><br>
+    {{b.body}}
+    <br><br>
+    written by <a href="/details/{{b.owner.username}}">{{b.owner.username}}</a>
+    <br><br>
+    {% endfor %}
+{%endif%}
+{% endblock %}

@@ -2,15 +2,15 @@
 
 {% block content %}
 
-    <h1>Build a Blog</h1>
+    <h1>List of Bloggers</h1>
 
     <ul>
-        {% for blog in posted_blogs %}
+        {% for user in users %}
         <li>
             <h1 style='text-decoration: underline'>
-                <a href="/blog?id={{ blog.id }}">{{ blog.title }}</a>
-                </h1>
-            <p>{{ blog.body }}</p>
+                <a href="/blog?user_id={{ user.user_id }}">{{ user.username }}</a>
+            </h1>
+            
         </li>
         {% endfor %}
     </ul>
